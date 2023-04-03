@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="./svg/Imagen mascotas y título.svg" alt="logoO">
+        </div>
+    </header>
+
+    <main>
+        <div class="encabezadoCeleste"></div>
+
+        <form class="formularioMascota">
+
+            <div class="inputContainer">
+                <label for="nombreDueño"> Nombre del dueño</label>
+                <input type="text" id="nombre" placeholder="cosme fulanito" required>
+            </div>
+
+            <div class="inputContainer">
+                <label for="email"> Direccion de Email </label>
+                <input type="text" id="email" placeholder="direccion@gmail.com" required>
+            </div>
+
+            <div class="inputContainer">
+                <label for="nombreMascota"> Nombre de tu Mascota</label>
+                <input type="text" id="nombreMascota" placeholder="puppy" required>
+            </div>
+
+            <div class="inputContainer">
+                <label for="tipoMascota"> Tipo de Mascota</label>
+                <select name="tipoMascota">
+                    <option>Perro</option>
+                    <option>Gato</option>
+                </select>
+            </div>
+
+            <div class="inputContainer">
+                <label for="tamañoMascota"> Tamaño </label>
+                <select name="tamañoMascota">
+                    <option>chico</option>
+                    <option>mediano</option>
+                    <option>grande </option>
+                </select>
+            </div>
+
+            <div class="inputContainer">
+                <label for="peso"> Peso en Kilogramos</label>
+                <input type="number" id="peso" placeholder="10">
+            </div>
+
+            <button type="submit" value="calcular" class="btnCalcular">Calcular IMC</button>
+
+        </form>
+    </main>
+
+    <footer class="piePagina">
+        <div class="contenedorPie">
+            <div class="contenedor-row">
+                <div class="box">
+                    <h2> Nosotros </h2>
+                    <a href="#">marcos_a_garcia@yahoo.com.ar</a>
+                    <a href="#">Suyay@mail.com</a>
+                    <a href="#">Lorena@mail.com</a>
+                    <a href="#">Lucas@mail.com</a>
+                    
+                </div>
+
+
+                <div class="box">
+                    <h2>Contactanos</h2>
+                    
+                </div>
+
+                <div class="box-redes">
+                    <h2>¡Seguinos!</h2>
+                    <div  class="redes">
+                        <a href="#"> <img src="./svg/facebook.svg" alt="logoFacebook" ></a>
+                        <a href="#"><img src="./svg/instagram.svg" alt="logoInstagram"></a>
+                        <a href="#"><img src="./svg/envelope-at-fill.svg" alt="logoMail"></a>
+                    </div>
+
+                   
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
