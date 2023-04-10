@@ -19,7 +19,7 @@ header{
     display: flex;
     align-items: center;
     border-radius: 5px 5px 0px 0px;
-    padding: 20px;
+    padding: 5px;
     font-family: 'Righteous', cursive;
     justify-content: space-around; 
 }
@@ -38,12 +38,43 @@ header div{
 
 }
 
+nav a{
+    text-decoration: none;
+    font-family:'Righteous', cursive;
+    color:rgb(61, 90, 128);;
+    padding-top: 2px;
+    padding-right: 20px;
+
+    transition: all .3s ease;
+}
+nav a:hover{
+    
+    color: white;
+   text-shadow: 2px 2px 4px #000000;;
+
+}
+nav{
+    display: flex;
+    justify-content:right;
+    padding-right: 10px;
+
+}
+.contenedorHTML{
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+}
+
 h1{
    
     font-family: 'Righteous', cursive;
-    color: aliceblue;
+    color: rgb(31, 46, 59);
     margin-right: 10px; /* desplaza hacia la derecha el Icono*/
     
+}
+.selectRazas{
+    color: rgb(31, 46, 59);
 }
 
 main form{
@@ -68,7 +99,7 @@ main form .inputContainer input, select{
     padding: 10px;
     font-size: 18px;
 }
-.btnCalcular{
+button{
     background-color: rgb(61, 90, 128);
     color: white;
     border: 1px solid rgb(40, 39, 39);
@@ -79,12 +110,59 @@ main form .inputContainer input, select{
     transition: all .3s ease;
 }
 
-.btnCalcular:hover{
-    /*color: rgb(173, 151, 151);*/
+button:hover{
+    
     box-shadow:  0px 7px 10px rgba(0, 0, 0, 0.267);
-   /* padding-left: 6px;*/
+   
 }
 
+.razas{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+.contenedorHTML{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.contenedorRaza{
+    display: flex;
+    justify-content: center;
+    gap:30px;
+    flex-wrap: wrap;
+    padding: 50px;
+    margin-bottom: 20px;
+    
+   
+}
+
+.cardGato{
+    background-color: rgb(19, 20, 20);
+    color: white;
+    font-family:'Righteous', cursive;
+    padding: 30px;
+    
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.581);
+   
+}
+
+.cardGato img{
+    width:200px; 
+    height:100%;
+    
+    border-radius: 5px;
+}
+
+    
+    
+   
+
+                                                                    /* Footer */
 .contenedorPie{
     color: white;
     max-width: 1200px;
