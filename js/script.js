@@ -1,39 +1,68 @@
-const contenedorHTML = document.getElementById("selectRazas")
+const formularioUsuarios = document.querySelector(".formularioUsuarios")
+const contenedorUsuarios = document.querySelector("#contenedorMascota")
+const mascotas =[]
 
-const URL_API_RAZA = "https://api.thecatapi.com/v1/images/search?breed_ids="   /* id y url */
-const  URL_API =" https://api.thecatapi.com/v1/breeds"     /* id, name, description, life_span */
+const calcularIMC = (peso,cp,lp) => { 
+    var a = cp/0.70622;
+    var b = a-lp;
+    var c = b/0.9156;
+    var d = c-lp;
+    return d;
+}
 
-fetch(URL_API)
-.then(response => response.json())
-.then(gatos => {
-    
-        for(const razas of gatos){
-         contenedorHTML.innerHTML += `
-         <option value= "${razas.id}" data-info= "nombre":'{${razas.name},"descripcion":${razas.description},"anos:"${razas.life_span}}'>${razas.name}</option> 
-        ` 
-     
+
+const renderzarMascotas = () => {
+    contenedorMascota.innerHTML=""
+   
+    for(const mascota of mascotas){
+        let calculo = calcularIMC(mascota.peso, mascota.cirPanza, mascota.largoPata)
+        console.log(calculo)
+        let estadoGato =""
+        if(calculo <=10){
+            estadoGato = "Bajo Peso"
+            console.log(estadoGato)
+            
+        }
+        else if(calculo<=25){
+            estadoGato = "Tu gato esta perfecto"
+            console.log(estadoGato)
+            
+            } 
+            else{ 
+                estadoGato = "Sobre peso"
+                console.log(estadoGato)
+            }
+
+            
+
+        contenedorMascota.innerHTML += `
+        <div class= imc-card>
+        <h2>Nombre Mascota: ${mascota.nombreMascota}</h2>
+        <p>Cumpleaños: ${mascota.cumpleGato}</p>
+        <p>Sexo: ${mascota.sexoMascota}</p>
+        <p>Peso: ${mascota.peso}</p>
+        <p>Circunsferencia Pata:${mascota.cirPanza}
+        <p>Largo Pata: ${mascota.largoPata}</p>
+        <p>Resultado IMC: ${calculo} </p>
+        <p>Estado: ${estadoGato}</p>
+                             
+        `
+        calculo = 0
+        estadoGato=""
     }
-
+} 
+formularioUsuarios.addEventListener("submit", (event) =>{
+    event.preventDefault()
+    
+    mascotas.push({
+        nombreMascota: formularioUsuarios.nombreMascota.value,
+        cumpleGato: formularioUsuarios.cumpleGato.value,
+        sexoMascota: formularioUsuarios.sexoMascota.value,
+        peso: formularioUsuarios.peso.value,
+        cirPanza: formularioUsuarios.cirPanza.value,
+        largoPata: formularioUsuarios.largoPata.value,
+        })
+    renderzarMascotas()
 })
 
-function mostrarRaza(){
-    const listaDesplegable = document.getElementById("selectRazas")
-    const cardGatoHTML = document.getElementById("ContenedorRaza")
-       
-    const buscar = URL_API_RAZA+listaDesplegable.value
-    cardGatoHTML.innerHTML=`` 
- 
-    fetch(buscar)
-    .then(response => response.json())
-    .then(gato =>{
-        
-            var caturl = gato.url
-            cardGatoHTML.innerHTML +=`
-            <div class="cardGato">
-           
-            <img src=${gato[0].url}>
-            </div>`      
-    
-    }) 
- 
-}
+
